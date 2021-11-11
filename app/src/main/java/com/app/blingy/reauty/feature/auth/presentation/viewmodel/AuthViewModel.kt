@@ -1,6 +1,7 @@
 package com.app.blingy.reauty.feature.auth.presentation.viewmodel
 
 import android.content.Intent
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.app.blingy.reauty.core.data.preference.AppPreferences
 import com.app.blingy.reauty.core.domain.model.user.User
@@ -11,6 +12,7 @@ import com.app.blingy.reauty.core.util.exhaustive
 import com.app.blingy.reauty.feature.auth.domain.usecase.*
 import com.app.blingy.reauty.feature.auth.presentation.contract.AuthContract
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -30,6 +32,9 @@ class AuthViewModel @Inject constructor(
     private val appPreferences: AppPreferences,
 ) :
     BaseViewModel<AuthContract.AuthEvent, AuthContract.AuthViewState, AuthContract.AuthSideEffect>() {
+
+
+    val TAG = AuthViewModel::class.simpleName
 
     override fun createInitialState(): AuthContract.AuthViewState {
         return AuthContract.AuthViewState(AuthContract.AuthViewState().idle)
@@ -130,6 +135,8 @@ class AuthViewModel @Inject constructor(
                 showSnackWithMessage("Welcome ${firebaseUser?.displayName}")
             } catch (e: FirebaseAuthException) {
                 showSnackWithMessage(e.errorCode)
+            } catch (e1: ApiException) {
+                showSnackWithMessage(e1.statusCode.toString())
             }
         }
 

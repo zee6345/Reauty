@@ -18,8 +18,8 @@
             android:id="@+id/action_signInFragment_to_createUniqueNameFragment"
             app:destination="@id/createUniqueNameFragment" />
 
-            android:id="@+id/action_signInFragment_to_profileFragment2"
-            app:destination="@id/profileFragment2" />
+        <!--            android:id="@+id/action_signInFragment_to_profileFragment2"-->
+        <!--            app:destination="@id/profileFragment2" />-->
 
     </fragment>
     <fragment

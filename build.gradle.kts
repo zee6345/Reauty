@@ -24,6 +24,7 @@ buildscript {
         classpath(libs.dependencyUpdatePlugin)
         classpath(libs.jacocoPlugin)
         classpath(libs.googleServicePlugin)
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

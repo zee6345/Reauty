@@ -91,6 +91,9 @@ class CreateUniqueNameFragment : Fragment() {
                         )
                     )
                     searchQuery = uniqueName
+
+                    navigateToDashboard()
+
                 } else {
                     // name is blank, show error
                     showSnackBar(resources.getString(R.string.text_error_name))
@@ -120,7 +123,6 @@ class CreateUniqueNameFragment : Fragment() {
                                 User(userSearchName = query)
                             )
                         )
-                        navigateToDashboard()
                     }
                 }
             }

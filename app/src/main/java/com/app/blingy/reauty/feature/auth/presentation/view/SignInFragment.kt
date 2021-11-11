@@ -2,11 +2,10 @@ package com.app.blingy.reauty.feature.auth.presentation.view
 
 
 import android.app.Activity
-
-
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +16,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.app.blingy.reauty.R
+import com.app.blingy.reauty.core.util.Utils
 import com.app.blingy.reauty.core.util.connectivity.ConnectionLiveData
 import com.app.blingy.reauty.core.util.exhaustive
 import com.app.blingy.reauty.core.util.extension.shortSnackBar
@@ -25,6 +25,11 @@ import com.app.blingy.reauty.databinding.FragmentSignInBinding
 import com.app.blingy.reauty.feature.auth.presentation.contract.AuthContract
 import com.app.blingy.reauty.feature.auth.presentation.viewmodel.AuthViewModel
 import com.app.blingy.reauty.feature.welcome.presentation.view.MainActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -38,9 +43,12 @@ private const val KEY_PENDING_EMAIL = "key_pending_email"
 @AndroidEntryPoint
 class SignInFragment : Fragment() {
 
+    val TAG = SignInFragment::class.simpleName
+
     private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
     private val viewModel: AuthViewModel by viewModels()
+
     @Inject
     lateinit var connectivity: ConnectionLiveData
     private lateinit var googleSignInIntent: Intent
@@ -89,10 +97,26 @@ class SignInFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
+        Log.e(TAG, "onActivityResult: called $requestCode")
         if (resultCode == Activity.RESULT_CANCELED) {
             toggleViewsVisibility(false)
         }
-        if (requestCode == REQUEST_CODE_GOOGLE_SIGN && resultCode == Activity.RESULT_OK) {
+        if (requestCode == REQUEST_CODE_GOOGLE_SIGN) {
+
+
+            Log.e(TAG, "onActivityResult: inside google auth")
+
+//            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+//            try {
+//                val account = task.getResult(ApiException::class.java)
+//                Log.e(TAG, "onActivityResult: ${account.displayName}")
+//            } catch (e: ApiException) {
+//                Log.e(TAG, "onActivityResult: ${e.message}")
+//            }
+//
+//            Log.e(TAG, "onActivityResult: ${data!!}")
+
             viewModel.setEvent(AuthContract.AuthEvent.CredentialSignIn(data!!))
         }
     }
@@ -108,65 +132,87 @@ class SignInFragment : Fragment() {
         downArrowImageClicked()
     }
 
-    private fun observeConnectivity() {
-        connectivity.observe(viewLifecycleOwner, { isConnected ->
-            isConnected?.let {
-                if (it) {
-                    toggleViewsVisibility(true)
-                } else {
-                    toggleViewsVisibility(false)
-                    binding.root.shortSnackBar(
-                        resources.getString(R.string.text_error_internet_connection)
-                    )
-                }
-            }
-        })
-    }
+//    private fun observeConnectivity() {
+//        connectivity.observe(viewLifecycleOwner, { isConnected ->
+//            isConnected?.let {
+//                if (it) {
+//                    toggleViewsVisibility(true)
+//                } else {
+//                    toggleViewsVisibility(false)
+//                    binding.root.shortSnackBar(
+//                        resources.getString(R.string.text_error_internet_connection)
+//                    )
+//                }
+//            }
+//        })
+//    }
 
     private fun googleSignInButtonClicked() {
         binding.btnGoogle.setOnClickListener {
 
             removeEditTextError()
-
-            //disableButtons()
-
+            disableButtons()
             googleSignInIntent = viewModel.getGoogleSignInIntent().signInIntent
             startActivityForResult(googleSignInIntent, REQUEST_CODE_GOOGLE_SIGN)
+
+//            val options = GoogleSignInOptions
+//                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestIdToken(getString(R.string.webclient_id))
+//                .requestEmail()
+//                .build()
+//            val googleClient = GoogleSignIn.getClient(requireActivity(), options)
+//            val signInIntent: Intent = googleClient.getSignInIntent()
+//            startActivityForResult(signInIntent, REQUEST_CODE_GOOGLE_SIGN)
+
         }
     }
 
-//    private fun emailSignInButtonClicked() {
-//        binding.btnLogin.setOnClickListener {
-//            hideKeyboard(binding.edtEmail)
-//            validateEmailAddress()
+//    private fun validateEmailAddress() {
+//        binding.apply {
+//            val email = binding.edtEmail.text?.trim().toString()
+//            if (!email.isEmpty()) {
+//                Timber.d("validateEmailAddress: email address: $email")
+//                if (Utils.isValidEmail(email)) {
+//                    toggleViewsVisibility(true)
+//                    binding.edtEmail.error = null
+//                    pendingEmail = email
+//                    viewModel.setEvent(AuthContract.AuthEvent.SendEmailLink(email))
+//                } else {
+//                    toggleViewsVisibility(false)
+//                    requestFocusAndKeyboard()
+//                    binding.edtEmail.error = "Please provide valid email address"
+//                }
+//
+//            }
 //        }
 //    }
-
-    private fun validateEmailAddress() {
-        binding.apply {
-            val email = edtEmail.text?.trim().toString()
-            Timber.d("validateEmailAddress: email address: $email")
-            if (email.contains('@') && email.isNotBlank()) {
-                toggleViewsVisibility(true)
-                binding.edtEmail.error = null
-                pendingEmail = email
-                viewModel.setEvent(AuthContract.AuthEvent.SendEmailLink(pendingEmail))
-            } else {
-                toggleViewsVisibility(false)
-                requestFocusAndKeyboard()
-                binding.edtEmail.error = "Please provide valid email address"
-            }
-        }
-    }
-
 
 
     private fun emailSignInButtonClicked() {
         binding.btnLogin.setOnClickListener {
-            disableButtons()
-            hideKeyboard(binding.edtEmail)
-            validateEmailAddress()
-            viewModel.setEvent(AuthContract.AuthEvent.SendEmailLink(pendingEmail))
+            try {
+                val email = binding.edtEmail.text!!.trim().toString()
+                if (!email.isEmpty()) {
+                    if (Utils.isValidEmail(email)) {
+
+                        toggleViewsVisibility(true)
+                        disableButtons()
+                        hideKeyboard(binding.edtEmail)
+                        pendingEmail = email
+                        viewModel.setEvent(AuthContract.AuthEvent.SendEmailLink(email))
+
+                        Log.d(TAG, "emailSignInButtonClicked: $email")
+
+                    } else {
+                        toggleViewsVisibility(false)
+                        requestFocusAndKeyboard()
+                        binding.edtEmail.error = "Please provide valid email address"
+                    }
+                } else {
+                    binding.edtEmail.error = "Please provide email address"
+                }
+            } catch (e: Exception) {
+            }
         }
     }
 
@@ -180,7 +226,7 @@ class SignInFragment : Fragment() {
                     false -> binding.progress.isVisible = false
                 }.exhaustive
                 if (it.isSignInFinished) {
-                   // navigateToCrateProfile()
+                    // navigateToCrateProfile()
                 }
             }
         }
@@ -270,23 +316,23 @@ class SignInFragment : Fragment() {
         }
     }
 
-   // private fun hideKeyboard(view: View) {
+    // private fun hideKeyboard(view: View) {
 
-     fun disableButtons(){
+    fun disableButtons() {
         binding.apply {
-          // btnApple.isEnabled = false
+            // btnApple.isEnabled = false
             btnLogin.isEnabled = false
             btnGoogle.isEnabled = false
         }
     }
 
-     fun hideKeyboard(view: View){
+    fun hideKeyboard(view: View) {
 
         val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
         imm?.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
-     fun navigateToCrateProfile() {
+    fun navigateToCrateProfile() {
         val action = SignInFragmentDirections.actionSignInFragmentToCreateProfileFragment()
         findNavController().navigate(action)
     }

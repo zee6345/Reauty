@@ -39,7 +39,7 @@
     <string name="text_error_name">Name shouldn\'t be empty</string>
     <string name="text_error_unique_name">*This username is taken</string>
     <string name="text_birthday">Birthday</string>
-    <string name="text_error_birthday">You are under age</string>
+    <string name="text_error_birthday">You are under age min age is (16)</string>
     <string name="text_gender">Gender</string>
     <string name="text_hint_password">*Password must contain at least one number</string>
     <string name="text_title_eula">Review our Terms and Services</string>

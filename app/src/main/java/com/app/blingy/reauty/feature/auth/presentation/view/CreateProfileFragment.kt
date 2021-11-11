@@ -2,6 +2,8 @@ package com.app.blingy.reauty.feature.auth.presentation.view
 
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -153,6 +155,25 @@ class CreateProfileFragment : Fragment() {
     private fun validateAge(age: Int, birthday: String) {
         if (age < MIN_AGE) {
             binding.tvErrorAge.text = resources.getString(R.string.text_error_birthday)
+//            binding.tvErrorAge.addTextChangedListener(object : TextWatcher {
+//                override fun beforeTextChanged(
+//                    s: CharSequence?,
+//                    start: Int,
+//                    count: Int,
+//                    after: Int
+//                ) {
+//                    TODO("Not yet implemented")
+//                }
+//
+//                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+//                    binding.tvErrorAge.visibility = View.GONE
+//                }
+//
+//                override fun afterTextChanged(s: Editable?) {
+//                    TODO("Not yet implemented")
+//                }
+//
+//            })
         } else {
             binding.btnBirthday.text = birthday
         }
@@ -196,8 +217,7 @@ class CreateProfileFragment : Fragment() {
     private fun navigateToUniqueNameFragment() {
         val action =
             CreateProfileFragmentDirections.actionCreateProfileFragmentToCreateUniqueNameFragment()
-        findNavController()
-            .navigate(action)
+        findNavController().navigate(action)
     }
 
     private fun updateUserData(user: User) {

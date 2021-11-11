@@ -123,6 +123,7 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.3.6")
     implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
 
+
     // unit testing
     // coroutine, mockwebserver, junit, androidx-test,
     // truth, turbine, mockito, mockito-kotlin, hilt

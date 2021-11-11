@@ -47,7 +47,11 @@ class OnBoardingAdapter :
             binding.apply {
                 tvTitle.text = res.getString(model.title).trim()
                 tvDesc.text = res.getString(model.desc).trim()
-                animLottie.setAnimation(model.image)
+                try {
+                    animLottie.setAnimation(model.image)
+                } catch (e: Exception) {
+
+                }
             }
         }
     }

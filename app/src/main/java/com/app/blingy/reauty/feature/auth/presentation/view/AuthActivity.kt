@@ -2,6 +2,8 @@ package com.app.blingy.reauty.feature.auth.presentation.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -21,6 +23,9 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class AuthActivity : AppCompatActivity() {
+
+
+    val TAG = AuthActivity::class.simpleName
 
     private lateinit var binding: ActivityAuthBinding
 
@@ -46,6 +51,20 @@ class AuthActivity : AppCompatActivity() {
         super.onStart()
         getDynamicLink()
     }
+
+
+    //activity result for fragment
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (resultCode == RESULT_OK) {
+//            try {
+//                SignInFragment().onActivityResult(requestCode, resultCode, data)
+//            } catch (e: Exception) {
+//            }
+//        }
+//
+//    }
+
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
@@ -78,15 +97,21 @@ class AuthActivity : AppCompatActivity() {
         val intent = intent
         Timber.d("handleSuccess: intent: $intent")
         val emailLink = intent.data.toString()
-        Timber.d("handleSuccess: email link: ${intent.data.toString()}")
-        if (viewModel.isSignInWithEmailLink(emailLink)) {
-            viewModel.getEmailAddress()
-            val emailAddress = viewModel.uiState.value.emailAddress
-            Timber.d("handleSuccess: email address: $emailAddress")
-            viewModel.signInWithEmailLink(email = emailAddress, emailLink = emailLink)
-            Timber.d("handleSuccess: inside uiState called")
-            Timber.d("handleSuccess: isSignInFinished: ${viewModel.uiState.value.isSignInFinished}")
-            navigateToCreateProfile()
+        if (emailLink != null) {
+            Timber.d("handleSuccess: email link: ${intent.data.toString()}")
+            if (viewModel.isSignInWithEmailLink(emailLink)) {
+                viewModel.getEmailAddress()
+                val emailAddress = viewModel.uiState.value.emailAddress
+                if (!emailAddress.isNullOrEmpty()) {
+                    Timber.d("handleSuccess: email address: $emailAddress")
+                    viewModel.signInWithEmailLink(email = emailAddress, emailLink = emailLink)
+                    Timber.d("handleSuccess: inside uiState called")
+                    Timber.d("handleSuccess: isSignInFinished: ${viewModel.uiState.value.isSignInFinished}")
+                    navigateToCreateProfile()
+                } else {
+                    Toast.makeText(this, "Please use valid link!", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 
