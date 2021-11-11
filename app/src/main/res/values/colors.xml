@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+<!--    <color name="purple_500">#FF6200EE</color>-->
+<!--    <color name="purple_700">#FF3700B3</color>-->
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="reauty_primary">#FFF69382</color>
+    <color name="reauty_secondary">#EFB99F</color>
+    <color name="reauty_outline">#FFFFFDF7</color>
+    <color name="reauty_black">#FF000000</color>
+    <color name="reauty_grey">#FFFAFAFA</color>
+
+    <!--Reauty Colour-->
+    <color name="reauty_coral">#FFF69382</color>
+    <color name="reauty_coral_variant">#F49D8E</color>
+    <color name="reauty_color_background">#FFFFFFFF</color>
+    <color name="reauty_yellow">#FFFFF3D8</color>
+    <color name="reauty_yellow_variant">#EDFFF3D8</color>
+    <color name="reauty_button_text">#F69382</color>
+    <color name="reauty_welcome_text">#F8AA9A</color>
+    <color name="reauty_surface">#FFF5DF</color>
+    <color name="black_900">#000000</color>
+    <color name="white_50">#ffffff</color>
+    <color name="text_black">#4A4B4D</color>
+    <color name="text_hint_colour">#C4C4C5</color>
+</resources>

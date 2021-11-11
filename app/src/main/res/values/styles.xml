@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--[START] Window Transition Animation Style-->
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+    <!--[END] Window Transition Animation Style-->
+
+    <!--CONTAINED Button-->
+    <style name="ContainedButton" parent="Widget.MaterialComponents.Button" />
+    <!--CONTAINED Button-->
+    <style name="OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton" />
+    <!--TEXT Button-->
+    <style name="TextButton" parent="Widget.MaterialComponents.Button.TextButton" />
+
+    <!--Round Corner Shape-->
+    <style name="ShapeRoundCorner">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!--[START] Join Now Button-->
+    <style name="Button.Contained.Rounded" parent="ContainedButton">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="textAllCaps">false</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeRoundCorner</item>
+        <item name="backgroundTint">@color/reauty_coral</item>
+        <item name="android:textColor">@color/reauty_outline</item>
+    </style>
+    <!--[END] Join Now Button-->
+
+    <!--[START] Sign In Button-->
+    <style name="Button.Outlined.Rounded" parent="OutlinedButton">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="textAllCaps">false</item>
+        <item name="strokeColor">@color/reauty_primary</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="backgroundTint">@color/reauty_outline</item>
+        <item name="android:textColor">@color/reauty_primary</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeRoundCorner</item>
+    </style>
+    <!--[END] Sign In Button-->
+
+    <!--[START] Social Sign In Button-->
+    <style name="Button.Outlined.Rounded.Social" parent="Button.Outlined.Rounded">
+        <item name="strokeColor">@color/reauty_black</item>
+        <item name="backgroundTint">@color/reauty_outline</item>
+        <item name="android:textColor">@color/reauty_black</item>
+    </style>
+    <!--[END] Social Sign In Button-->
+
+    <!--[START] Beauty Tip Item View-->
+    <style name="Image.Outlined.Rounded.BeautyTip" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="strokeWidth">@dimen/image_outlined_rounded_beauty_tip_stroke</item>
+        <item name="strokeColor">@color/reauty_coral</item>
+    </style>
+    <!--[END] Beauty Tip Item View-->
+
+    <!--[START] User Profile Feed Item View Holder-->
+    <style name="Image.Outlined.Rounded.FeedAvatar" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="strokeWidth">@dimen/image_outlined_rounded_beauty_tip_stroke</item>
+        <item name="strokeColor">@color/reauty_coral</item>
+    </style>
+
+    <!--[END] User Profile Feed Item View Holder-->
+
+
+    <style name="profile_tv_view_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="profile_count_tv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!--[START] Name Create Profile Edit Text-->
+    <style name="EditText.Rounded" parent="">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded
+        </item>
+        <item name="android:textColorHint">@color/text_hint_colour</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="hintTextColor">@color/reauty_black</item>
+    </style>
+    <!--[END] Name Create Profile Edit Text-->
+
+    <!--[START] Birthday and Gender Create Profile Button-->
+
+    <style name="Button.Outlined.Round.Text" parent="ContainedButton">
+        <item name="shapeAppearanceOverlay">@style/ShapeRoundCorner</item>
+        <item name="textAllCaps">false</item>
+        <item name="elevation">@dimen/btn_birthday_gender_elevation</item>
+        <item name="android:elevation">@dimen/btn_birthday_gender_elevation</item>
+        <item name="android:popupElevation">@dimen/btn_birthday_gender_elevation</item>
+        <item name="backgroundTint">@color/reauty_grey</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="hintTextColor">@color/text_hint_colour</item>
+    </style>
+
+
+    <style name="Button.Outlined.Round.Text2" parent="ContainedButton">
+        <item name="shapeAppearanceOverlay">@style/ShapeRoundCorner</item>
+        <item name="textAllCaps">false</item>
+        <item name="elevation">@dimen/btn_birthday_gender_elevation</item>
+        <item name="android:elevation">@dimen/btn_birthday_gender_elevation</item>
+        <item name="android:popupElevation">@dimen/btn_birthday_gender_elevation</item>
+        <item name="backgroundTint">@color/reauty_grey</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="hintTextColor">@color/text_hint_colour</item>
+    </style>
+
+    <!--[END] Birthday and Gender Create Profile Button-->
+
+    <!--[START] Welcome Text Style-->
+    <style name="Text.Welcome" parent="@style/TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/reauty_coral</item>
+    </style>
+    <!--[END] Welcome Text Style-->
+
+    <!--[START] Welcome Title Text Style-->
+    <style name="Text.Welcome.Title" parent="@style/TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+    <!--[END] Welcome Title Text Style-->
+
+    <!--[START] Welcome Desc Text Style-->
+    <style name="Text.Welcome.Desc" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_hint_colour</item>
+    </style>
+    <!--[END] Welcome Desc Text Style-->
+
+    <!--[START] Sign in Text Style-->
+    <style name="Text.SignIn" parent="@style/TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/reauty_coral</item>
+    </style>
+    <!--[END] Sign in Text Style-->
+
+    <!--[START] Sign in Desc Text Style-->
+    <style name="Text.SignIn.Desc" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/reauty_coral</item>
+    </style>
+    <!--[END] Sign in Desc Text Style-->
+
+    <!--[START] Create Profile Text Style-->
+    <style name="Text.CreateProfile" parent="@style/TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/reauty_coral</item>
+    </style>
+    <!--[END] Create Profile Text Style-->
+
+    <!--[START] Create Profile Desc Text Style-->
+    <style name="Text.CreateProfile.Desc" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+    <!--[END] Create Profile Desc Text Style-->
+
+    <!--[START] Create Profile Hint Text Style-->
+    <style name="Text.CreateProfile.Hint" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_hint_colour</item>
+    </style>
+    <!--[END] Create Profile Hint Text Style-->
+
+    <!--[START] Create Profile Eula Text Style-->
+    <style name="Text.CreateProfile.Eula" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/reauty_coral</item>
+    </style>
+    <!--[END] Create Profile Eula Text Style-->
+
+    <!--[START] Unique Name Text Style-->
+    <style name="Text.CreateProfile.UniqueName" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/reauty_coral</item>
+    </style>
+    <!--[END] Unique Name Text Style-->
+
+    <!--[START] Unique Name Desc Text Style-->
+    <style name="Text.CreateProfile.UniqueName.Desc" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+    <!--[END] Unique Name Text Style-->
+
+    <!--[START] BASE Card Style-->
+    <style name="Card.BASE" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="cardElevation">0dp</item>
+    </style>
+    <!--[END] BASE Card Style-->
+
+    <!--[START] Feed Main Card Style-->
+    <style name="Card.Feed.Main" parent="Card.BASE">
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">36dp</item>
+    </style>
+    <!--[END] Feed Main Card Style-->
+
+    <!--[START] Feed User Info & Social Card Style-->
+    <style name="Card.Feed.User" parent="Card.BASE">
+        <item name="cardElevation">4dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardCornerRadius">20dp</item>
+    </style>
+    <!--[END] Feed User Info & Social Card Style-->
+
+    <!--[START] Feed User Info & Social Card Style-->
+    <style name="Card.Feed.Social" parent="Card.BASE">
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/reauty_color_background</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardCornerRadius">20dp</item>
+    </style>
+    <!--[END] Feed User Info & Social Card Style-->
+
+    <!--[START] Feed User Tag Card Style-->
+    <style name="Card.Feed.Tag" parent="Card.BASE">
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/reauty_color_background</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+    <!--[END] Feed User Tag Card Style-->
+
+    <!--[START] Item Beauty Tip Detail Card Style-->
+    <style name="Card.BeautyTip.Main" parent="Card.BASE">
+
+    </style>
+
+    <style name="option_profile_items">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">15dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:fontFamily">@font/ivymode_semibold</item>
+        <item name="android:drawableEnd">@drawable/ic_baseline_arrow_forward_ios_24</item>
+    </style>
+    <!--[END] Item Beauty Tip Detail Card Style-->
+
+    <!--[START] Base Dialog Style-->
+    <style name="Dialog.BASE" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="shapeAppearanceMediumComponent">@style/RoundShapeAppearance</item>
+    </style>
+
+    <style name="RoundShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+    <!--[END] Base Dialog Style-->
+
+    <!--[START] Beauty Tip Dialog Style-->
+    <style name="Dialog.BeautyTip" parent="Dialog.BASE" />
+    <!--[END] Beauty Tip Dialog Style-->
+
+    <!--[START] Feed Detail Feed Image Style-->
+    <style name="Image.Rounded.FeedDetail" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">36dp</item>
+    </style>
+    <!--[END] Feed Detail Feed Image Style-->
+
+    <!--[START] Bottom Navigation View Style-->
+    <style name="BottomNavigationStyle" parent="Theme.App">
+        <item name="background">@color/reauty_coral</item>
+        <item name="colorPrimary">@color/reauty_yellow</item>
+        <item name="android:textColorSecondary">@color/reauty_yellow</item>
+    </style>
+    <!--[END] Bottom Navigation View Style-->
+
+    <!--[START] Privacy Policy Text Style-->
+    <style name="Text.PrivacyPolicy.Title" parent="@style/TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/reauty_black</item>
+    </style>
+    <!--[END] Privacy Policy Text Style-->
+
+    <!--[START] Privacy Policy Text Style-->
+    <style name="Text.PrivacyPolicy.Header1" parent="@style/TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/reauty_black</item>
+    </style>
+    <!--[END] Privacy Policy Text Style-->
+
+    <!--[START] Privacy Policy Text Style-->
+    <style name="Text.PrivacyPolicy.Header2" parent="@style/TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/reauty_black</item>
+    </style>
+    <!--[END] Privacy Policy Text Style-->
+
+    <!--[START] Privacy Policy Text Style-->
+    <style name="Text.PrivacyPolicy.Body" parent="@style/TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/reauty_black</item>
+    </style>
+    <!--[END] Privacy Policy Text Style-->
+
+    <!--[START] Search ViewPager Account and Tag Item View Holder-->
+    <style name="Image.Outlined.Rounded.AccountAndTagAvatar" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!--[START] Imageview For Post Review-->
+    <style name="Image.Outlined.Rounded.PostReview" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+        <item name="android:background"> @drawable/image_review_bg</item>
+    </style>
+
+
+</resources>

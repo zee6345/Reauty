@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.welcome.presentation.view.WelcomeFragment">
+
+    <!--Welcome Text-->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_welcome"
+        style="@style/Text.Welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_welcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/app_name" />
+
+    <!--placeholder for animation with text-->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/indicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_welcome" />
+
+    <!--dots indicator-->
+    <!--issue fix: https://github.com/ongakuer/CircleIndicator/issues/136-->
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginBottom="16dp"
+        android:clipToPadding="false"
+        app:ci_drawable="@drawable/indicator_active"
+        app:ci_drawable_unselected="@drawable/indicator_inactive"
+        app:layout_constraintBottom_toTopOf="@+id/btn_join_now"
+        app:layout_constraintEnd_toEndOf="@+id/btn_join_now"
+        app:layout_constraintStart_toStartOf="@+id/btn_join_now" />
+
+    <!--join now button-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_join_now"
+        style="@style/Button.Contained.Rounded"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/text_join_now"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sign_in"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
+        app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
+        tools:text="@string/text_join_now" />
+
+    <!--login button-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_sign_in"
+        style="@style/Button.Outlined.Rounded"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/text_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/text_login" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

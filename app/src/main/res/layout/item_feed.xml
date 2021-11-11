@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_before_expand"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glv_parent_half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_user_info_feed"
+            style="@style/Card.Feed.User"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@id/glv_parent_half"
+            app:layout_constraintStart_toStartOf="@id/cv_main_feed"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_user_info_feed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_user_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_percent="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imv_user_profile_photo_user_info_feed"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/Image.Outlined.Rounded.FeedAvatar"
+                    app:srcCompat="@drawable/ic_default_profile_picture" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_user_name_user_info_feed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toTopOf="@id/guideline_user_info"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imv_user_profile_photo_user_info_feed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="John Doe" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_like_count_number_user_info_feed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_user_name_user_info_feed"
+                    app:layout_constraintTop_toBottomOf="@id/guideline_user_info"
+                    tools:text="000" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_like_text_user_info_feed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/text_likes"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_like_count_number_user_info_feed"
+                    app:layout_constraintTop_toBottomOf="@id/guideline_user_info"
+                    tools:text="likes" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_main_feed"
+            style="@style/Card.Feed.Main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cv_social_feed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cv_user_info_feed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_main_feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imv_feed_photo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="W,1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_face" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card.Feed.Tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imv_tag_feed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        app:srcCompat="@drawable/ic_default_tag" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_social_feed"
+            style="@style/Card.Feed.Social"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/cv_main_feed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cv_main_feed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_social_feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_social_feed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imv_like_social_feed"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toTopOf="@id/guideline_social_feed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_default_like_empty"
+                    app:tint="@color/reauty_coral_variant" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imv_comment_social_feed"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintBottom_toBottomOf="@id/guideline_social_feed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/guideline_social_feed"
+                    app:srcCompat="@drawable/ic_default_comment"
+                    app:tint="@color/reauty_coral_variant" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imv_share_social_feed"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/guideline_social_feed"
+                    app:srcCompat="@drawable/ic_default_share"
+                    app:tint="@color/reauty_coral_variant" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_after_expand"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_main_feed_after"
+            style="@style/Card.Feed.Main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_main_feed_after"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_user_info_feed_after"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_user_info_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imv_user_profile_photo_user_info_feed_after"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_margin="4dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/Image.Outlined.Rounded.FeedAvatar"
+                        app:srcCompat="@drawable/ic_default_profile_picture" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_user_name_user_info_feed_after"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintBottom_toTopOf="@id/guideline_user_info_after"
+                        app:layout_constraintEnd_toStartOf="@+id/ic_dots"
+                        app:layout_constraintStart_toEndOf="@id/imv_user_profile_photo_user_info_feed_after"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="John Doe" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_like_count_number_user_info_feed_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tv_user_name_user_info_feed_after"
+                        app:layout_constraintTop_toBottomOf="@id/guideline_user_info_after"
+                        tools:text="000" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_like_text_user_info_feed_after"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/text_likes"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_like_count_number_user_info_feed_after"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_user_name_user_info_feed_after"
+                        app:layout_constraintStart_toEndOf="@id/tv_like_count_number_user_info_feed_after"
+                        app:layout_constraintTop_toTopOf="@+id/tv_like_count_number_user_info_feed_after"
+                        tools:text="likes" />
+
+                    <ImageView
+                        android:id="@+id/ic_dots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_dots_horizontal" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imv_feed_photo_after"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintDimensionRatio="W,1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container_user_info_feed_after"
+                    app:shapeAppearance="@style/Image.Rounded.FeedDetail"
+                    app:srcCompat="@drawable/ic_face" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card.Feed.Tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:layout_constraintBottom_toBottomOf="@id/imv_feed_photo_after"
+                    app:layout_constraintStart_toStartOf="@id/imv_feed_photo_after">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imv_tag_feed_after"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        app:srcCompat="@drawable/ic_default_tag" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_social_feed_after"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imv_feed_photo_after">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_social_feed_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imv_like_social_feed_after"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imv_comment_social_feed_after"
+                        app:layout_constraintEnd_toStartOf="@+id/imv_comment_social_feed_after"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imv_comment_social_feed_after"
+                        app:srcCompat="@drawable/ic_default_like_empty"
+                        app:tint="@color/reauty_coral" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imv_comment_social_feed_after"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline_social_feed_after"
+                        app:layout_constraintStart_toStartOf="@+id/guideline_social_feed_after"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_default_comment"
+                        app:tint="@color/reauty_coral" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imv_share_social_feed_after"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imv_comment_social_feed_after"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imv_comment_social_feed_after"
+                        app:layout_constraintTop_toTopOf="@+id/imv_comment_social_feed_after"
+                        app:srcCompat="@drawable/ic_default_share"
+                        app:tint="@color/reauty_coral" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_comment_owner_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/text_placeholder_name"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/container_social_feed_after"
+                    app:layout_constraintTop_toBottomOf="@+id/container_social_feed_after" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_comment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:text="@string/text_placeholder_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_comment_owner_name"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_comment_owner_name" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_view_all_comment"
+                    android:text="@string/text_view_all_comment"
+                    android:textColor="@color/reauty_coral_variant"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_comment"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_comment" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

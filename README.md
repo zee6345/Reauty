@@ -1,29 +1,23 @@
-# README #
+### Code Style
+[Kotlin Android Code Style](https://developer.android.com/kotlin/style-guide)
 
-This README would normally document whatever steps are necessary to get your application up and running.
+### Software Architecture
+#### Clean Architecture (core/feature)
 
-### What is this repository for? ###
+### View and ViewGroup Priority
+1. Material View
+2. androidx variant
+3. support library variant
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+##### eg
+1. com.google.android.material.textview.MaterialTextView
+2. androidx.appcompat.widget.AppCompatTextView
+3. TextView
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### resources naming convention
+type -> description -> view
+eg bg_greeting_welcome
 
-### Contribution guidelines ###
+eg anim_from_here_to_there
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact

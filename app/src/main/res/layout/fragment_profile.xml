@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.profile.view.ProfileFragment"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_reauty_24"
+        app:menu="@menu/menu_top_profile">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/my_profile"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textColor="@color/reauty_secondary"/>
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:background="@color/white"
+            >
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/collapsing_tools_bar"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="110dp"
+                        android:layout_height="31dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rounded_corner_chip"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:drawableStart="@drawable/ic_reautycoin_android"
+                            android:drawablePadding="14dp"
+                            android:paddingStart="7dp"
+                            android:text="1,000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="51dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_oilyskin_android"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginTop="32dp"
+                        app:shapeAppearanceOverlay="@style/Image.Outlined.Rounded.FeedAvatar"
+                        app:layout_constraintBottom_toTopOf="@+id/profileUsername"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/ic_profile" />
+
+                    <TextView
+                        android:id="@+id/profileUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_black"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.532"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profileImage"
+                        tools:text="@string/username" />
+
+                    <TextView
+                        android:id="@+id/shortBiography"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profileUsername"
+                        tools:text="Short biography" />
+
+                                                    <LinearLayout
+                                                        android:id="@+id/linearLayout3"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toBottomOf="@+id/shortBiography">
+
+                                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                                            style="@style/profile_tv_view_style"
+                                                            android:id="@+id/postView">
+
+                                                            <TextView
+                                                                android:id="@+id/postsTV"
+                                                                style="@style/profile_count_tv_style"
+                                                                android:text="000"
+                                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                                app:layout_constraintEnd_toEndOf="parent"
+                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                                            <TextView
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:text="Posts"
+                                                                android:textAlignment="center"
+                                                                android:textStyle="bold"
+                                                                app:layout_constraintEnd_toEndOf="@id/postsTV"
+                                                                app:layout_constraintStart_toStartOf="@id/postsTV"
+                                                                app:layout_constraintTop_toBottomOf="@id/postsTV" />
+
+
+                                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                                            style="@style/profile_tv_view_style"
+                                                            android:id="@+id/followersView">
+
+                                                            <TextView
+                                                                android:id="@+id/followersTV"
+                                                                style="@style/profile_count_tv_style"
+                                                                android:text="000"
+                                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                                app:layout_constraintEnd_toEndOf="parent"
+                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                                            <TextView
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:text="@string/followers"
+                                                                android:textAlignment="center"
+                                                                android:textStyle="bold"
+                                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                                app:layout_constraintEnd_toEndOf="@id/followersTV"
+                                                                app:layout_constraintStart_toStartOf="@id/followersTV"
+                                                                app:layout_constraintTop_toBottomOf="@id/followersTV" />
+
+
+                                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                                            style="@style/profile_tv_view_style"
+                                                            android:id="@+id/FollowingView">
+
+                                                            <TextView
+                                                                android:id="@+id/followingTV"
+                                                                style="@style/profile_count_tv_style"
+                                                                android:text="000"
+                                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                                app:layout_constraintEnd_toEndOf="parent"
+                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                                            <TextView
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:text="@string/following"
+                                                                android:textAlignment="center"
+                                                                android:textStyle="bold"
+                                                                app:layout_constraintEnd_toEndOf="@id/followingTV"
+                                                                app:layout_constraintStart_toStartOf="@id/followingTV"
+                                                                app:layout_constraintTop_toBottomOf="@id/followingTV" />
+
+
+                                                        </androidx.constraintlayout.widget.ConstraintLayout>
+                                                    </LinearLayout>
+
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="205dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:tabBackground="@color/white"
+                    app:tabIconTint="@color/reauty_primary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

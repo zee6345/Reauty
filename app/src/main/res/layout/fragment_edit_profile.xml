@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.profile.view.EditProfileFragment">
+    
+<androidx.constraintlayout.widget.ConstraintLayout 
+     android:layout_height="match_parent"
+     android:layout_width="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/editProfileAppbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/reauty_yellow_variant"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/btn_myProfileTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_arrow_back_ios_24"
+            android:padding="10dp"
+            android:textColor="#8B9EC4"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/btnSaveTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/ivymode_semibold"
+            android:text="Save"
+            android:textAlignment="textEnd"
+            android:textSize="14sp" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImgViewEt"
+
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="16dp"
+        android:padding="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_default_profile_picture"
+        app:shapeAppearanceOverlay="@style/Image.Outlined.Rounded.FeedAvatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileAppbar"
+         />
+
+    <Button
+        android:id="@+id/btn_changePfPicture"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/white"
+        android:layout_height="64dp"
+        android:textColor="@color/reauty_primary"
+        android:textStyle="bold"
+        android:text="@string/change_profile_photo"
+        app:layout_constraintTop_toBottomOf="@id/profileImgViewEt"
+        />
+
+    <TextView
+        android:id="@+id/nameTVpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="@string/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_changePfPicture" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_namePf"
+        style="@style/EditText.Rounded"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTVpf" />
+
+
+    <TextView
+        android:id="@+id/usernameTVpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toBottomOf="@id/edt_namePf"
+        app:layout_constraintBottom_toTopOf="@id/edt_usernamePf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_usernamePf"
+        style="@style/EditText.Rounded"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usernameTVpf" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shortbio"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_usernamePf"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtshortBiographyPf"
+        style="@style/EditText.Rounded"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center"
+        android:hint=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_usernamePf" />
+    <!-- Image Cropper fill the remaining available height -->
+    <com.canhub.cropper.CropImageView
+        android:id="@+id/cropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline10"
+        app:layout_constraintBottom_toBottomOf="@id/guideline11">
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_cropDone"
+            android:layout_width="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_check_24"/>
+    </com.canhub.cropper.CropImageView>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="297dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="312dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

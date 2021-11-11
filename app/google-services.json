@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "232489786179",
+    "firebase_url": "https://findme-57cf5.firebaseio.com",
+    "project_id": "findme-57cf5",
+    "storage_bucket": "findme-57cf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232489786179:android:4223ea7cf40ef0b2b86df6",
+        "android_client_info": {
+          "package_name": "com.app.blingy.reauty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232489786179-mlahrf5acj2n8gja8e53oeevr9am48qh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.blingy.reauty",
+            "certificate_hash": "967da240dd94d392a766c1525dc06e614bb4dd30"
+          }
+        },
+        {
+          "client_id": "232489786179-01i6vn9gq5iij751sd2464l6if9pheoa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKUAPOzwukdO_c1rEu3W2l7yPeOpbx-Kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232489786179-01i6vn9gq5iij751sd2464l6if9pheoa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "232489786179-8h4k1k7hle37iv0b7e931ib1mrs81bmt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.findm.Findm"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

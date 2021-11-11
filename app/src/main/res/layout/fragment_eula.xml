@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context=".feature.auth.presentation.view.EulaFragment">
+
+    <ScrollView
+        android:id="@+id/sv_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/eula_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_eula_header_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_1"
+                android:textAppearance="@style/Text.PrivacyPolicy.Title" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_1"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_2"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header1" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_3"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_2"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_4"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_3"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_5"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header1" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_6"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_7"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_4"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_8"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_5"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_9"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_6"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_10"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_7"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_11"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_8"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_12"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_9"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_13"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_10"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_14"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header1" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_15"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_11"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_16"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_12"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_17"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_13"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_18"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_14"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_19"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_15"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_20"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_16"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+            <TextView
+                android:id="@+id/tv_eula_header_21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_header_21"
+                android:textAppearance="@style/Text.PrivacyPolicy.Header2" />
+
+            <TextView
+                android:id="@+id/tv_eula_body_17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eula_body_17"
+                android:textAppearance="@style/Text.PrivacyPolicy.Body" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
